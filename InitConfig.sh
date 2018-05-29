@@ -13,7 +13,7 @@
 ## Add software here:
 
 declare -a brew=(
-'duty'
+'duti'
 'git'
 'node'
 'exiftool'
