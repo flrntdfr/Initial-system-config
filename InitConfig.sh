@@ -13,6 +13,7 @@
 ## Add software here:
 
 declare -a brew=(
+'duty'
 'git'
 'node'
 'exiftool'
@@ -26,6 +27,7 @@ declare -a brew=(
 'ccat')
 
 declare -a cask=(
+'appcleaner'
 'atom'
 'boostnote'
 'chromium'
