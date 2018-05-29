@@ -5,7 +5,6 @@
 #TODO: Add mac App store applications install with mas-cli (https://github.com/mas-cli/mas)
 #TODO: Further configuration of fish shell
 #TODO: Add snippets in clipy (common Java methods...)
-#TODO: Set default applications (mac-vim, IINA, iterm2, Chromium)
 #TODO: What about GPG config ? Recover private Keys...
 #TODO: restore macOS active edges
 
@@ -13,6 +12,7 @@
 ## Add software here:
 
 declare -a brew=(
+'duti'
 'git'
 'node'
 'exiftool'
@@ -26,6 +26,7 @@ declare -a brew=(
 'ccat')
 
 declare -a cask=(
+'appcleaner'
 'atom'
 'boostnote'
 'chromium'
@@ -187,6 +188,25 @@ chsh -s $fishPath                         # Make fish the default shell
 ### Atom configuration
 
 apm disable welcome
+
+### Set default applications (using duti)
+
+duti -s "$(osascript -e 'id of app "Typora"')" md all
+duti -s "$(osascript -e 'id of app "Chromium"')" html all
+
+declare -a iinaFormats=(mp3 mp4 mkv avi) #Add other format here
+
+for format in "${iinaFormats[@]}"
+do
+  duti -s "$(osascript -e 'id of app "IINA"')" $format all
+done
+
+declare -a macvimFormats=(txt log dat sh fasta) #Add other format here
+
+for format in "${macvimFormats[@]}"
+do
+  duti -s "$(osascript -e 'id of app "macvim"')" $format all
+done
 
 #----------------------------------------------------------------
 #Clean and reboot:
