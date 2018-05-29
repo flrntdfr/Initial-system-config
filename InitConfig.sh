@@ -36,6 +36,7 @@ declare -a cask=(
 'eclipse-ide'
 'evernote'
 'flux'
+'font-latin-modern'
 'font-open-sans'
 'github' #Formerly github-desktop
 'goofy'
