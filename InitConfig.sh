@@ -43,6 +43,7 @@ declare -a cask=(
 'gpg-suite'
 'grammarly'
 'iina'
+'inkscape'
 'iterm2'
 'java8'
 'mactex-no-gui' #That's heavy!
