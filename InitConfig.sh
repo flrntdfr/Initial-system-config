@@ -26,6 +26,7 @@ declare -a brew=(
 'ccat')
 
 declare -a cask=(
+'xquartz' # Some cask need it to be installed beforehand
 'appcleaner'
 'atom'
 'boostnote'
@@ -57,6 +58,7 @@ declare -a cask=(
 'transmission'
 'typora'
 'wwdc'
+
 'zotero')
 
 declare -a npm=(
