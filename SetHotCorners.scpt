@@ -9,7 +9,7 @@ tell application "System Preferences"
 	tell application "System Events"
 		delay 3 -- Let time for Mission control to open
 		tell window "Mission Control" of process "System Preferences"
-			click button "Coins actifs…"
+			click button "Coins actifs…" --(For french system)
 			tell sheet 1
 				tell group 1
 					set theCurrentValues to value of pop up buttons

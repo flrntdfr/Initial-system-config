@@ -2,11 +2,9 @@
 ## Florent DUFOUR
 ### My automated software installation after a clean install (for macOS Sierra)
 
-#TODO: Add mac App store applications install with mas-cli (https://github.com/mas-cli/mas)
 #TODO: Further configuration of fish shell
 #TODO: Add snippets in clipy (common Java methods...)
 #TODO: What about GPG config ? Recover private Keys...
-#TODO: restore macOS active edges
 
 #----------------------------------------------------------------
 ## Add software here:
@@ -18,6 +16,8 @@ declare -a brew=(
 'exiftool'
 'ffmpeg'
 'fish'
+'gcc'
+'mas'
 'maven'
 'pandoc'
 'python3'
@@ -26,7 +26,7 @@ declare -a brew=(
 'ccat')
 
 declare -a cask=(
-'xquartz' # Some cask need it to be installed beforehand
+'xquartz' # Some casks need it to be installed beforehand
 'appcleaner'
 'atom'
 'boostnote'
@@ -39,7 +39,7 @@ declare -a cask=(
 'flux'
 'font-latin-modern'
 'font-open-sans'
-'github' #Formerly github-desktop
+'github' # Formerly 'github-desktop'
 'goofy'
 'gpg-suite'
 'grammarly'
@@ -47,18 +47,18 @@ declare -a cask=(
 'inkscape'
 'iterm2'
 'java8'
-'mactex-no-gui' #That's heavy!
+'mactex-no-gui' # That's heavy!
 'macvim'
 'processing'
 'rocket'
 'scenebuilder'
 'skype'
 'spectacle'
-'textstudio'
+'texstudio'
+'touchbarserver'
 'transmission'
 'typora'
 'wwdc'
-
 'zotero')
 
 declare -a npm=(
@@ -68,9 +68,11 @@ declare -a apm=(
 'atom-beautify'
 'atom-live-server'
 'autocomplete-java'
+'close-on-left' # A necessity...
 'dark-flat-ui'
 'emmet'
 'highlight-selected'
+'language-applescript'
 'linter'
 'linter-htmlhint'
 'linter-javac'
@@ -86,14 +88,17 @@ declare -a apm=(
 'p5xjs-autocomplete')
 
 declare -a mas=(
-'Amphetamine'
-'Color Picker'
-'Am I online')
+'937984704'  # Amphetamine
+'1229643033' # Am I online
+'641027709'  # Color Picker
+'409183694'  # Keynote
+'576338668'  # Leaf
+'409203825'  # Numbers
+'409201541') # Pages
 
 declare -a pip=(
 'pandas'      # Comes along other useful libraries such as numpy
-'matplotlib'
-)
+'matplotlib')
 
 #----------------------------------------------------------------
 ## Install homebrew:
@@ -140,7 +145,7 @@ done
 
 # Install atom packages
 
-atom     # Open atom for the first time so the apm command is available
+atom     # Open atom for the first time so the apm command is made available
 sleep 30 # Wait for atom to be launched
 
 for a in "${apm[@]}"
@@ -151,7 +156,13 @@ done
 
 # Install app from mac app store
 
-# TODO?
+mas signin --dialog dufour.florent@icloud.com  # Disaplays a dialog box to login
+
+for m in "${mas[@]}"
+do
+  echo -e "> Installing Mac app store App $m"
+  mas install "$m"
+done
 
 # Install python packages
 
@@ -177,6 +188,10 @@ sudo mv Leopard.png "$destination/Leopard.png"
 sudo mv Snow-Leopard.png "$destination/Snow-Leopard.png"
 
 osascript -e 'tell application "System Events" to set picture of every desktop to ("/Library/Desktop Pictures/Leopard.png" as POSIX file as alias)'
+
+### Hot corners
+
+sudo osascript SetHotCorners.scpt
 
 ### ultimate vim rc
 
@@ -205,7 +220,7 @@ do
   duti -s "$(osascript -e 'id of app "IINA"')" $format all
 done
 
-declare -a macvimFormats=(txt log dat sh fasta) #Add other format here
+declare -a macvimFormats=(txt log dat sh fasta f90 f95 srt) #Add other format here
 
 for format in "${macvimFormats[@]}"
 do
@@ -215,7 +230,7 @@ done
 #----------------------------------------------------------------
 #Clean and reboot:
 
-read -p "Remove cached images now ? (Y/N) " remove
+read -p "Remove cached packages/images now ? (Y/N) " remove
 
 if [  $remove = 'Y'  ] || [  $remove = 'y'  ]
 then
