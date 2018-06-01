@@ -10,4 +10,4 @@ It highly relies on homebrew and other package managers such as npm or apm.
 * Add snippets in clipy (common Java methods...)
 * ~~Set default applications (mac-vim, IINA, iterm2, Chromium)~~
 * What about GPG config ? Recover private Keys...
-* ~~Restore macOS active edges~~
+* ~~Restore macOS hot corners~~
