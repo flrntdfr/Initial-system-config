@@ -2,10 +2,6 @@
 ## Florent DUFOUR
 ### My automated software installation after a clean install (for macOS Sierra)
 
-#TODO: Further configuration of fish shell
-#TODO: Add snippets in clipy (common Java methods...)
-#TODO: What about GPG config ? Recover private Keys...
-
 #----------------------------------------------------------------
 ## Add software here:
 
@@ -25,8 +21,8 @@ declare -a brew=(
 'tree'
 'ccat')
 
-declare -a cask=(
-'xquartz' # Some casks need it to be installed beforehand
+declare -a cask=( # Some casks need it to be installed beforehand
+'xquartz' # Some casks rely on xquartz as a dependency
 'appcleaner'
 'atom'
 'boostnote'
@@ -49,6 +45,7 @@ declare -a cask=(
 'java8'
 'mactex-no-gui' # That's heavy!
 'macvim'
+'onyx'
 'processing'
 'rocket'
 'scenebuilder'
@@ -85,7 +82,8 @@ declare -a apm=(
 'linter-ui-default'
 'minimap'
 'outlander-syntax'
-'p5xjs-autocomplete')
+'p5xjs-autocomplete'
+'wordcount')
 
 declare -a mas=(
 '937984704'  # Amphetamine
@@ -156,11 +154,11 @@ done
 
 # Install app from mac app store
 
-mas signin --dialog dufour.florent@icloud.com  # Disaplays a dialog box to login
+mas signin --dialog dufour.florent@icloud.com  # Displays a dialog box to login
 
 for m in "${mas[@]}"
 do
-  echo -e "> Installing Mac app store App $m"
+  echo -e "> Installing Mac app store Apps $m"
   mas install "$m"
 done
 
@@ -191,7 +189,7 @@ osascript -e 'tell application "System Events" to set picture of every desktop t
 
 ### Hot corners
 
-sudo osascript SetHotCorners.scpt
+sudo osascript SetHotCorners.scpt # The AppleScript has to be in the same directory
 
 ### ultimate vim rc
 
@@ -207,13 +205,14 @@ chsh -s $fishPath                         # Make fish the default shell
 ### Atom configuration
 
 apm disable welcome
+#TODO: activate scroll past end
 
-### Set default applications (using duti)
+### Set default applications (using duti and inline applescripting)
 
 duti -s "$(osascript -e 'id of app "Typora"')" md all
 duti -s "$(osascript -e 'id of app "Chromium"')" html all
 
-declare -a iinaFormats=(mp3 mp4 mkv avi) #Add other format here
+declare -a iinaFormats=(mp3 mp4 mkv avi webm) #Add other format here
 
 for format in "${iinaFormats[@]}"
 do
