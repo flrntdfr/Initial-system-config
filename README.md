@@ -11,3 +11,4 @@ It highly relies on homebrew and other package managers such as npm or apm.
 * ~~Set default applications (mac-vim, IINA, iterm2, Chromium)~~
 * What about GPG config ? Recover private Keys...
 * ~~Restore macOS hot corners~~
+* Install eclipse plugins ([e(fx)clipse](http://marketplace.eclipse.org/content/efxclipse), [CDT](http://marketplace.eclipse.org/content/complete-eclipse-cc-ide), [OS X Eclipse Launcher](http://marketplace.eclipse.org/content/osx-eclipse-launcher)
