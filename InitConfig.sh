@@ -91,6 +91,7 @@ declare -a mas=(
 '641027709'  # Color Picker
 '409183694'  # Keynote
 '576338668'  # Leaf
+'715768417'  # Microsoft remote desktop
 '409203825'  # Numbers
 '409201541') # Pages
 
@@ -212,14 +213,14 @@ apm disable welcome
 duti -s "$(osascript -e 'id of app "Typora"')" md all
 duti -s "$(osascript -e 'id of app "Chromium"')" html all
 
-declare -a iinaFormats=(mp3 mp4 mkv avi webm) #Add other format here
+declare -a iinaFormats=(mp3 mp4 mkv avi webm) #Add other formats here
 
 for format in "${iinaFormats[@]}"
 do
   duti -s "$(osascript -e 'id of app "IINA"')" $format all
 done
 
-declare -a macvimFormats=(txt log dat sh fasta f90 f95 srt) #Add other format here
+declare -a macvimFormats=(txt log dat sh fasta f90 f95 srt csl bib) #Add other formats here
 
 for format in "${macvimFormats[@]}"
 do
