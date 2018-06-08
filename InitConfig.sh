@@ -3,23 +3,23 @@
 ### My automated software installation after a clean install (for macOS Sierra)
 
 #----------------------------------------------------------------
-## Add software here:
+## Add softwares here:
 
 declare -a brew=(
+'ccat'
 'duti'
-'git'
-'node'
 'exiftool'
 'ffmpeg'
 'fish'
 'gcc'
+'git'
 'mas'
 'maven'
+'node'
 'pandoc'
 'python3'
-'youtube-dl'
 'tree'
-'ccat')
+'youtube-dl')
 
 declare -a cask=( # Some casks need it to be installed beforehand
 'xquartz' # Some casks rely on xquartz as a dependency
@@ -89,6 +89,7 @@ declare -a mas=(
 '937984704'  # Amphetamine
 '1229643033' # Am I online
 '641027709'  # Color Picker
+'1033480833' # Decompressor (Because someone will someday send you a .rar ...)
 '409183694'  # Keynote
 '576338668'  # Leaf
 '715768417'  # Microsoft remote desktop
@@ -96,8 +97,10 @@ declare -a mas=(
 '409201541') # Pages
 
 declare -a pip=(
-'pandas'      # Comes along other useful libraries such as numpy
-'matplotlib')
+'livereload'
+'matplotlib'
+'pandas')     # Comes along other useful libraries such as numpy
+
 
 #----------------------------------------------------------------
 ## Install homebrew:
@@ -139,7 +142,7 @@ done
 for n in "${npm[@]}"
 do
     echo -e "> Installing node $n "
-    sudo npm install "$n" -g
+    sudo npm install -g "$n"
 done
 
 # Install atom packages
@@ -227,10 +230,17 @@ do
   duti -s "$(osascript -e 'id of app "macvim"')" $format all
 done
 
+declare -a decompressorFormats=(rar) #Add other formats here
+
+for format in "${decompressorFormats[@]}"
+do
+  duti -s "$(osascript -e 'id of app "Decompressor"')" $format all
+done
+
 #----------------------------------------------------------------
 #Clean and reboot:
 
-read -p "Remove cached packages/images now ? (Y/N) " remove
+read -p "Remove cached packages/images now ? (Y/N): " remove
 
 if [  $remove = 'Y'  ] || [  $remove = 'y'  ]
 then
@@ -238,9 +248,9 @@ then
 fi
 
 echo -e '\n\tREBOOTING\n'
-read -p "Reboot now ? (Y/N) " reboot
+read -p "Reboot now ? (Y/N): " reboot
 
 if [  $reboot = 'Y'  ] || [  $reboot = 'y'  ]
 then
-  sudo shutdown -r now "Rebooting. Installation completed";
+  sudo shutdown -r now "Rebooting. Installation completed.";
 fi
