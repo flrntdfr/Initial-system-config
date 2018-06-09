@@ -22,7 +22,7 @@ declare -a brew=(
 'youtube-dl')
 
 declare -a cask=( # Some casks need it to be installed beforehand
-'xquartz' # Some casks rely on xquartz as a dependency
+'xquartz' # Some casks rely on xquartz as a dependency: has to be first
 'appcleaner'
 'atom'
 'boostnote'
@@ -40,6 +40,7 @@ declare -a cask=( # Some casks need it to be installed beforehand
 'gpg-suite'
 'grammarly'
 'iina'
+'imagej'
 'inkscape'
 'iterm2'
 'java8'
@@ -194,6 +195,8 @@ osascript -e 'tell application "System Events" to set picture of every desktop t
 ### Hot corners
 
 sudo osascript SetHotCorners.scpt # The AppleScript has to be in the same directory
+
+#TODO: Activate & configure firewall
 
 ### ultimate vim rc
 
