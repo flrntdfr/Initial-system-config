@@ -17,6 +17,7 @@ declare -a brew=(
 'maven'
 'node'
 'pandoc'
+'pandoc-citeproc' # Because life is too short
 'python3'
 'tree'
 'youtube-dl')
