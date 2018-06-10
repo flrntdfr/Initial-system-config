@@ -67,7 +67,7 @@ declare -a apm=(
 'atom-beautify'
 'atom-live-server'
 'autocomplete-java'
-'close-on-left' # A necessity...
+'close-on-left' # Kind of a necessity...
 'dark-flat-ui'
 'emmet'
 'highlight-selected'
@@ -242,7 +242,7 @@ do
 done
 
 #----------------------------------------------------------------
-#Clean and reboot:
+## Clean and reboot:
 
 read -p "Remove cached packages/images now ? (Y/N): " remove
 
