@@ -11,4 +11,5 @@ This is a modest bash script I use to automatically set my favorite system confi
 * ~~Set default applications (mac-vim, IINA, iterm2, Chromium)~~
 * What about GPG config ? Recover private Keys...
 * ~~Restore macOS hot corners~~
+* Deactivate default automatic brightness of the screen
 * Install eclipse plugins: [e(fx)clipse](http://marketplace.eclipse.org/content/efxclipse), [CDT](http://marketplace.eclipse.org/content/complete-eclipse-cc-ide), [OS X Eclipse Launcher](http://marketplace.eclipse.org/content/osx-eclipse-launcher)
