@@ -47,8 +47,9 @@ declare -a cask=( # Some casks need it to be installed beforehand
 'java8'
 'mactex-no-gui' # That's heavy!
 'macvim'
+'meld'
 'onyx'
-'processing'
+'processing' # Uh!
 'rocket'
 'scenebuilder'
 'skype'
