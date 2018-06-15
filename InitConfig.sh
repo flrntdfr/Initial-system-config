@@ -227,7 +227,7 @@ do
   duti -s "$(osascript -e 'id of app "IINA"')" $format all
 done
 
-declare -a macvimFormats=(txt log dat sh fasta f90 f95 srt csl bib bbl aux) #Add other formats here
+declare -a macvimFormats=(txt log dat sh fasta f90 f95 srt csl bib bbl aux scala) #Add other formats here
 
 for format in "${macvimFormats[@]}"
 do
