@@ -8,6 +8,13 @@ alias itunes="open -a iTunes"
 alias home="cd ~"
 alias desktop="cd ~/Desktop/"
 alias ms="cd ~/eclipse-workspace/MS-Decoder"
+alias thesis="cd ~/Dropbox\ \(Unistra\)/LSMBO/Master_Thesis_report"
 alias dropP="cd ~/Dropbox\ \(Personnelle\)/"
 alias dropU="cd ~/Dropbox\ \(Unistra\)/"
 alias down="cd ~/Downloads"
+alias bristol="cd ~/Dropbox\ \(Personnelle\)/Letters-Bristol/"
+
+# Git shortcuts
+alias gaa="git add -A"
+alias gc="git commit -am"
+alias gh="git remote -v | awk '/origin.*push/ {print $2}' | xargs open"
