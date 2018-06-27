@@ -86,7 +86,8 @@ declare -a apm=(
 'minimap'
 'outlander-syntax'
 'p5xjs-autocomplete'
-'wordcount')
+'wordcount'
+'zen')
 
 declare -a mas=(
 '937984704'  # Amphetamine
@@ -215,6 +216,16 @@ chsh -s $fishPath                         # Make fish the default shell
 
 apm disable welcome
 #TODO: activate scroll past end
+
+### Copy and source configuration resources
+
+cp ./Resources/.bash_profile ~/.bash_profile
+cp ./Resources/.latexmkrc ~/.latexmkrc
+cp ./Resources/IINAConfig.conf /Library/Application Support/com.colliderli.iina/input_conf/MyConfig.conf
+cp ./Resources/itermProfile.json ~/Library/Application Support/iTerm2/DynamicProfiles/MyConfig.json
+
+source ~./bash_profile
+
 
 ### Set default applications (using duti and inline applescripting)
 
