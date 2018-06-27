@@ -109,13 +109,13 @@ declare -a pip=(
 #----------------------------------------------------------------
 ## Install homebrew:
 
-echo -e '\n\tINSTALLING HOMEBREW \n'
+echo -e '\n\tINSTALLING HOMEBREW\n'
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 #----------------------------------------------------------------
 ## Setup:
 
-echo -e '\n\tTAPPING \n'
+echo -e '\n\tTAPPING\n'
 brew tap homebrew/cask
 brew tap homebrew/cask-versions
 brew tap homebrew/cask-fonts
@@ -123,7 +123,7 @@ brew tap homebrew/cask-fonts
 #----------------------------------------------------------------
 ## Loop through the installs:
 
-echo -e '\n\tMESSING WITH INSTALLS \n'
+echo -e '\n\tMESSING WITH INSTALLS\n'
 
 # Install casks first (some brews may rely on casks. i.e. maven needs java7+ to be installed beforehand)
 
@@ -179,7 +179,7 @@ do
 done
 
 #----------------------------------------------------------------
-## Other configuration:
+## Other configurations:
 
 echo -e '\n\tMESSING WITH OTHER CONFIGS\n'
 
@@ -223,6 +223,8 @@ cp ./Resources/.bash_profile ~/.bash_profile
 cp ./Resources/.latexmkrc ~/.latexmkrc
 cp ./Resources/IINAConfig.conf /Library/Application Support/com.colliderli.iina/input_conf/MyConfig.conf
 cp ./Resources/itermProfile.json ~/Library/Application Support/iTerm2/DynamicProfiles/MyConfig.json
+chmod +x ./Resources/compressPDF
+cp ./Resources/compressPDF /usr/local/bin/compressPDF
 
 source ~./bash_profile
 
