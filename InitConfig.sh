@@ -6,6 +6,7 @@
 ## Add softwares here:
 
 declare -a brew=(
+'cairo'
 'ccat'
 'duti'
 'exiftool'
@@ -101,6 +102,7 @@ declare -a mas=(
 '409201541') # Pages
 
 declare -a pip=(
+'cairosvg'
 'livereload'
 'matplotlib'
 'pandas')     # Comes along other useful libraries such as numpy
@@ -125,7 +127,7 @@ brew tap homebrew/cask-fonts
 
 echo -e '\n\tMESSING WITH INSTALLS\n'
 
-# Install casks first (some brews may rely on casks. i.e. maven needs java7+ to be installed beforehand)
+# Install casks first (some brews may rely on casks. ex: maven needs java7+ to be installed beforehand)
 
 for c in "${cask[@]}"
 do
@@ -228,7 +230,6 @@ cp ./Resources/compressPDF /usr/local/bin/compressPDF
 
 source ~./bash_profile
 
-
 ### Set default applications (using duti and inline applescripting)
 
 duti -s "$(osascript -e 'id of app "Typora"')" md all
@@ -241,7 +242,7 @@ do
   duti -s "$(osascript -e 'id of app "IINA"')" $format all
 done
 
-declare -a macvimFormats=(txt log dat sh fasta f90 f95 srt csl bib bbl aux scala) #Add other formats here
+declare -a macvimFormats=(txt log dat sh fasta mgf f90 f95 srt csl bib bbl aux scala) #Add other formats here
 
 for format in "${macvimFormats[@]}"
 do
@@ -263,6 +264,7 @@ read -p "Remove cached packages/images now ? (Y/N): " remove
 if [  $remove = 'Y'  ] || [  $remove = 'y'  ]
 then
   rm -rf "$(brew --cache)"
+  brew cleanup
 fi
 
 echo -e '\n\tREBOOTING\n'
