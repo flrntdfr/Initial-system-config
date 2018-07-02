@@ -12,6 +12,7 @@ declare -a brew=(
 'exiftool'
 'ffmpeg'
 'fish'
+'hunspell'
 'gcc'
 'git'
 'mas'
@@ -207,6 +208,16 @@ sudo osascript SetHotCorners.scpt # The AppleScript has to be in the same direct
 
 git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
 sh ~/.vim_runtime/install_awesome_vimrc.sh
+
+### Spelling with hunspell
+
+sudo mkdir /Library/Spelling
+# English dictionary
+sudo curl -o /Library/Spelling/en_US.aff https://raw.githubusercontent.com/wooorm/dictionaries/master/dictionaries/en-US/index.aff
+sudo curl -o /Library/Spelling/en_US.dic https://raw.githubusercontent.com/wooorm/dictionaries/master/dictionaries/en-US/index.dic
+# French dictionary
+sudo curl -o /Library/Spelling/fr_FR.aff https://raw.githubusercontent.com/wooorm/dictionaries/master/dictionaries/fr/index.aff
+sudo curl -o /Library/Spelling/fr_FR.dic https://raw.githubusercontent.com/wooorm/dictionaries/master/dictionaries/fr/index.dic
 
 ### Fish shell
 
