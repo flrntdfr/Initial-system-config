@@ -25,7 +25,7 @@ declare -a brew=(
 'youtube-dl')
 
 declare -a cask=( # Some casks need it to be installed beforehand
-'xquartz' # Some casks rely on xquartz as a dependency: has to be first
+'xquartz'         # Some casks rely on xquartz as a dependency: has to be first
 'appcleaner'
 'atom'
 'boostnote'
@@ -38,7 +38,7 @@ declare -a cask=( # Some casks need it to be installed beforehand
 'flux'
 'font-latin-modern'
 'font-open-sans'
-'github' # Formerly 'github-desktop'
+'github'        # Formerly 'github-desktop'
 'goofy'
 'gpg-suite'
 'grammarly'
@@ -51,7 +51,7 @@ declare -a cask=( # Some casks need it to be installed beforehand
 'macvim'
 'meld'
 'onyx'
-'processing' # Uh!
+'processing'    # Uh!
 'rocket'
 'scenebuilder'
 'skype'
@@ -106,7 +106,7 @@ declare -a pip=(
 'cairosvg'
 'livereload'
 'matplotlib'
-'pandas')     # Comes along other useful libraries such as numpy
+'pandas')    # Comes along other useful libraries such as numpy
 
 
 #----------------------------------------------------------------
@@ -202,7 +202,7 @@ osascript -e 'tell application "System Events" to set picture of every desktop t
 
 sudo osascript SetHotCorners.scpt # The AppleScript has to be in the same directory
 
-#TODO: Activate & configure firewall
+#TODO: Activate & configure fire wall
 
 ### ultimate vim rc
 
@@ -212,10 +212,10 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 ### Spelling with hunspell
 
 sudo mkdir /Library/Spelling
-# English dictionary
+  # English dictionary
 sudo curl -o /Library/Spelling/en_US.aff https://raw.githubusercontent.com/wooorm/dictionaries/master/dictionaries/en-US/index.aff
 sudo curl -o /Library/Spelling/en_US.dic https://raw.githubusercontent.com/wooorm/dictionaries/master/dictionaries/en-US/index.dic
-# French dictionary
+  # French dictionary
 sudo curl -o /Library/Spelling/fr_FR.aff https://raw.githubusercontent.com/wooorm/dictionaries/master/dictionaries/fr/index.aff
 sudo curl -o /Library/Spelling/fr_FR.dic https://raw.githubusercontent.com/wooorm/dictionaries/master/dictionaries/fr/index.dic
 
@@ -283,5 +283,5 @@ read -p "Reboot now ? (Y/N): " reboot
 
 if [  $reboot = 'Y'  ] || [  $reboot = 'y'  ]
 then
-  sudo shutdown -r now "Rebooting. Installation completed.";
+  sudo shutdown -r now "Rebooting. Installation completed!";
 fi
