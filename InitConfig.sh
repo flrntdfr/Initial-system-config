@@ -234,9 +234,9 @@ apm disable welcome
 
 ### Copy and source configuration resources
 
-cp ./Resources/.bashrc ~/.bashrc                  # For bash shell
-cp ./Resources/.bashrc ~/.config/fish/config.fish # For fish shell
-cp ./Resources/.latexmkrc ~/.latexmkrc
+cp ./Resources/bashrc ~/.bashrc                  # For bash shell
+cp ./Resources/bashrc ~/.config/fish/config.fish # For fish shell
+cp ./Resources/latexmkrc ~/.latexmkrc
 cp ./Resources/IINAConfig.conf /Library/Application Support/com.colliderli.iina/input_conf/MyConfig.conf
 cp ./Resources/itermProfile.json ~/Library/Application Support/iTerm2/DynamicProfiles/MyConfig.json
 chmod +x ./Resources/compressPDF
