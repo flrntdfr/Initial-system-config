@@ -12,6 +12,7 @@ declare -a brew=(
 'exiftool'
 'ffmpeg'
 'fish'
+'hugin'
 'hunspell'
 'gcc'
 'git'
@@ -242,6 +243,10 @@ chmod +x ./Resources/compressPDF
 cp ./Resources/compressPDF /usr/local/bin/compressPDF
 
 source ~./bash_profile
+
+### Lightroom presets
+
+sudo cp -r ./Resources/Lightroom-presets /Users/florent/Library/Application Support/Adobe/Lightroom/Develop Presets/User Presets
 
 ### Set default applications (using duti and inline applescripting)
 
