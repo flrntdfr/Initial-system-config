@@ -274,6 +274,13 @@ do
   duti -s "$(osascript -e 'id of app "Decompressor"')" $format all
 done
 
+declare -a imagejFormats=(tif tiff) #Add other formats here
+
+for format in "${imagejFormats[@]}"
+do
+  duti -s "$(osascript -e 'id of app "imagej"')" $format all
+done
+
 #----------------------------------------------------------------
 ## Clean and reboot:
 
