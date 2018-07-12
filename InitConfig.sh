@@ -22,6 +22,7 @@ declare -a brew=(
 'pandoc'
 'pandoc-citeproc' # Because life is too short
 'python3'
+'trash'
 'tree'
 'youtube-dl')
 
@@ -93,7 +94,7 @@ declare -a apm=(
 'wordcount'
 'zen')
 
-declare -a mas=(
+declare -a mas=( # We prefer not to use `mas lucky`. The app id is more reliable.
 '937984704'  # Amphetamine
 '1229643033' # Am I online
 '641027709'  # Color Picker
@@ -110,7 +111,6 @@ declare -a pip=(
 'livereload'
 'matplotlib'
 'pandas')    # Comes along other useful libraries such as numpy
-
 
 #----------------------------------------------------------------
 ## Install homebrew:
@@ -235,15 +235,13 @@ apm disable welcome
 
 ### Copy and source configuration resources
 
-cp ./Resources/bashrc ~/.bashrc                  # For bash shell
-cp ./Resources/bashrc ~/.config/fish/config.fish # For fish shell
+cp ./Resources/bashrc ~/.bash_profile            # For bash shell
+cp ./Resources/bashrc ~/.config/fish/config.fish # For fish shell #TODO: create an alias to stay up to date
 cp ./Resources/latexmkrc ~/.latexmkrc
 cp ./Resources/IINAConfig.conf /Library/Application Support/com.colliderli.iina/input_conf/MyConfig.conf
 cp ./Resources/itermProfile.json ~/Library/Application Support/iTerm2/DynamicProfiles/MyConfig.json
 chmod +x ./Resources/compressPDF
 cp ./Resources/compressPDF /usr/local/bin/compressPDF
-
-source ~./bash_profile
 
 ### Lightroom presets
 
@@ -261,7 +259,7 @@ do
   duti -s "$(osascript -e 'id of app "IINA"')" $format all
 done
 
-declare -a macvimFormats=(txt log dat sh fasta mgf f90 f95 srt csl bib bbl aux scala) #Add other formats here
+declare -a macvimFormats=(txt log dat sh fasta mgf f90 f95 srt csl bib bbl aux sty scala cson) #Add other formats here
 
 for format in "${macvimFormats[@]}"
 do
