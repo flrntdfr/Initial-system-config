@@ -254,7 +254,7 @@ sudo cp -r ./Resources/Lightroom-presets /Users/florent/Library/Application Supp
 duti -s "$(osascript -e 'id of app "Typora"')" md all
 duti -s "$(osascript -e 'id of app "Chromium"')" html all
 
-declare -a iinaFormats=(mp3 mp4 m4a mkv avi webm) #Add other formats here
+declare -a iinaFormats=(mp3 mp4 m4a mkv avi webm mov) #Add other formats here
 
 for format in "${iinaFormats[@]}"
 do
