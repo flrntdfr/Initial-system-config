@@ -40,7 +40,7 @@ declare -a cask=( # Some casks need it to be installed beforehand
 'flux'
 'font-latin-modern'
 'font-open-sans'
-'github'        # Formerly 'github-desktop'
+'github'          # Formerly 'github-desktop'
 'goofy'
 'gpg-suite'
 'grammarly'
@@ -49,12 +49,12 @@ declare -a cask=( # Some casks need it to be installed beforehand
 'inkscape'
 'iterm2'
 'java8'
-'mactex-no-gui' # That's heavy!
+'mactex-no-gui'   # That's heavy!
 'macvim'
 'marp'
 'meld'
 'onyx'
-'processing'    # Uh!
+'processing'      # Uh!
 'rocket'
 'scenebuilder'
 'skype'
@@ -73,9 +73,11 @@ declare -a apm=(
 'atom-beautify'
 'atom-live-server'
 'autocomplete-java'
-'close-on-left' # Kind of a necessity...
+'close-on-left'   # Kind of a necessity...
 'dark-flat-ui'
 'emmet'
+'highlight-column'# Change style for line: automatic color is 284b6f
+'highlight-line'  # Change color to #284b6f
 'highlight-selected'
 'language-applescript'
 'linter'
@@ -91,6 +93,7 @@ declare -a apm=(
 'minimap'
 'outlander-syntax'
 'p5xjs-autocomplete'
+'todo-show'        #Yes!
 'wordcount'
 'zen')
 
