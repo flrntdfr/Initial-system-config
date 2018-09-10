@@ -12,6 +12,7 @@ declare -a brew=(
 'exiftool'
 'ffmpeg'
 'fish'
+'groovy'
 'hugin'
 'hunspell'
 'gcc'
@@ -41,7 +42,7 @@ declare -a cask=( # Some casks need it to be installed beforehand
 'font-latin-modern'
 'font-open-sans'
 'github'          # Formerly 'github-desktop'
-'goofy'
+#'goofy'
 'gpg-suite'
 'grammarly'
 'iina'
@@ -106,7 +107,8 @@ declare -a mas=( # We prefer not to use `mas lucky`. The app id is more reliable
 '576338668'  # Leaf
 '715768417'  # Microsoft remote desktop
 '409203825'  # Numbers
-'409201541') # Pages
+'409201541'  # Pages
+'439654198') # Simple mind
 
 declare -a pip=(
 'cairosvg'
@@ -241,6 +243,7 @@ apm disable welcome
 cp ./Resources/bashrc ~/.bash_profile            # For bash shell
 cp ./Resources/bashrc ~/.config/fish/config.fish # For fish shell #TODO: create an alias to stay up to date
 cp ./Resources/latexmkrc ~/.latexmkrc
+cp ./Resources/groovy_profile ~/.groovy/groovy_profile
 cp ./Resources/IINAConfig.conf /Library/Application Support/com.colliderli.iina/input_conf/MyConfig.conf
 cp ./Resources/itermProfile.json ~/Library/Application Support/iTerm2/DynamicProfiles/MyConfig.json
 chmod +x ./Resources/compressPDF
