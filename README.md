@@ -4,6 +4,7 @@ This is a modest bash script I use to automatically set my favorite system confi
 
 # TODOs (Ideas)
 
+* Add vim configuration
 * Add support for macOS Mojave
 * ~~Add mac App store applications install with mas-cli (https://github.com/mas-cli/mas)~~
 * ~~Further configuration of fish shell~~

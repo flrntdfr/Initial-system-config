@@ -3,7 +3,7 @@
 ### My automated software installation after a clean install (for macOS Sierra)
 
 #----------------------------------------------------------------
-## Software to install
+## Software to install:
 
 declare -a brew=(
 'cairo'
@@ -215,7 +215,7 @@ sudo osascript SetHotCorners.scpt # The AppleScript has to be in the same direct
 defaults write com.apple.finder AppleShowAllFiles TRUE # Show hidden files
 
 #----------------------------------------------------------------
-## Shell
+## Shell:
 
 ### Spelling with hunspell
 
@@ -234,7 +234,7 @@ echo $fishPath | sudo tee -a /etc/shells  # Add Fish to the list of supported sh
 chsh -s $fishPath                         # Make fish the default shell
 
 #----------------------------------------------------------------
-## vim
+## vim:
 
 ### ultimate vim rc
 
@@ -242,7 +242,7 @@ chsh -s $fishPath                         # Make fish the default shell
 #sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 #----------------------------------------------------------------
-## Configuration
+## Configuration:
 
 #TODO: Activate & configure fire wall
 
@@ -267,7 +267,7 @@ cp ./Resources/compressPDF /usr/local/bin/compressPDF
 sudo cp -r ./Resources/Lightroom-presets /Users/florent/Library/Application Support/Adobe/Lightroom/Develop Presets/User Presets
 
 #----------------------------------------------------------------
-## Default settings
+## Default settings:
 
 ### Set default applications (using duti and inline applescripting)
 
