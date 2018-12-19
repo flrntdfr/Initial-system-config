@@ -3,7 +3,7 @@
 ### My automated software installation after a clean install (for macOS Sierra)
 
 #----------------------------------------------------------------
-## Add softwares here:
+## Software to install:
 
 declare -a brew=(
 'cairo'
@@ -193,7 +193,7 @@ do
 done
 
 #----------------------------------------------------------------
-## Other configurations:
+## GUI:
 
 echo -e '\n\tMESSING WITH OTHER CONFIGS\n'
 
@@ -213,12 +213,12 @@ osascript -e 'tell application "System Events" to set picture of every desktop t
 
 sudo osascript SetHotCorners.scpt # The AppleScript has to be in the same directory
 
-#TODO: Activate & configure fire wall
+### Finder prefs
 
-### ultimate vim rc
+defaults write com.apple.finder AppleShowAllFiles TRUE # Show hidden files
 
-git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
-sh ~/.vim_runtime/install_awesome_vimrc.sh
+#----------------------------------------------------------------
+## Shell:
 
 ### Spelling with hunspell
 
@@ -235,6 +235,19 @@ sudo curl -o /Library/Spelling/fr_FR.dic https://raw.githubusercontent.com/wooor
 fishPath=`which fish`
 echo $fishPath | sudo tee -a /etc/shells  # Add Fish to the list of supported shells
 chsh -s $fishPath                         # Make fish the default shell
+
+#----------------------------------------------------------------
+## vim:
+
+### ultimate vim rc
+
+# git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+#sh ~/.vim_runtime/install_awesome_vimrc.sh
+
+#----------------------------------------------------------------
+## Configuration:
+
+#TODO: Activate & configure fire wall
 
 ### Atom configuration
 
@@ -255,6 +268,9 @@ cp ./Resources/compressPDF /usr/local/bin/compressPDF
 ### Lightroom presets
 
 sudo cp -r ./Resources/Lightroom-presets /Users/florent/Library/Application Support/Adobe/Lightroom/Develop Presets/User Presets
+
+#----------------------------------------------------------------
+## Default settings:
 
 ### Set default applications (using duti and inline applescripting)
 
