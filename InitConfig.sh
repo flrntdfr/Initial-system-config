@@ -12,7 +12,7 @@ declare -a brew=(
 'exiftool'
 'ffmpeg'
 'fish'
-'groovy'
+'groovysdk'
 'hugin'
 'hunspell'
 'gcc'
@@ -35,6 +35,7 @@ declare -a cask=( # Some casks need it to be installed beforehand
 'chromium'
 'clipy'
 'coconutbattery'
+'cryptomator'
 'dropbox'
 'eclipse-ide'
 'evernote'
@@ -48,6 +49,7 @@ declare -a cask=( # Some casks need it to be installed beforehand
 'iina'
 'imagej'
 'inkscape'
+'intellij-idea-ce'
 'iterm2'
 'java8'
 'mactex-no-gui'   # That's heavy!
@@ -65,7 +67,8 @@ declare -a cask=( # Some casks need it to be installed beforehand
 'transmission'
 'typora'
 'wwdc'
-'zotero')
+'zotero'
+'1password')
 
 declare -a npm=(
 'p5-manager')
